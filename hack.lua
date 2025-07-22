@@ -25,7 +25,7 @@ title.Font = Enum.Font.GothamBold
 local loadBtn = Instance.new("TextButton", frame)
 loadBtn.Size = UDim2.new(0.9, 0, 0, 50)
 loadBtn.Position = UDim2.new(0.05, 0, 0.4, 0)
-loadBtn.Text = "Load EcstacyV2 & Teleport"
+loadBtn.Text = "Load Script & Teleport"
 loadBtn.BackgroundColor3 = Color3.fromRGB(50, 150, 255)
 loadBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 loadBtn.Font = Enum.Font.Gotham
@@ -45,9 +45,9 @@ Instance.new("UICorner", closeBtn)
 
 -- Load + Teleport logic
 loadBtn.MouseButton1Click:Connect(function()
-	-- Load the remote script
+	-- Load your GitHub script
 	pcall(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/ecstacyV2/EcstacyV2/refs/heads/main2/EcstacyV2Real"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/rjdjjdvkbvlbcpu/hectormenu/refs/heads/main/hack.lua"))()
 	end)
 
 	-- Teleport player to their base
@@ -60,7 +60,7 @@ loadBtn.MouseButton1Click:Connect(function()
 	if basePart and hrp then
 		hrp.CFrame = basePart.CFrame + Vector3.new(0, 5, 0)
 	else
-		local teleportPosition = Vector3.new(0, 10, 0) -- CHANGE IF NEEDED
+		local teleportPosition = Vector3.new(0, 10, 0) -- Fallback location
 		if hrp then
 			hrp.CFrame = CFrame.new(teleportPosition)
 		end
